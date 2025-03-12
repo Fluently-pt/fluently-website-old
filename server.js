@@ -1,25 +1,22 @@
 import express from "express";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
-import compression from "compression";
+import path from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Compression middleware
-app.use(compression());
+const PORT = process.env.PORT || 8080;
 
 // Serve static files from the dist directory
 app.use(express.static(join(__dirname, "dist")));
 
-// Send all requests to index.html so that client-side routing works
+// Handle SPA routing - redirect all requests to index.html
 app.get("*", (req, res) => {
-  res.sendFile(join(__dirname, "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
 });
