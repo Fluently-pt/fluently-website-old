@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Logo } from './Logo';
+import React, { useState, useEffect } from "react";
+import { Logo } from "./Logo";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,27 +9,38 @@ export default function Header() {
       setIsScrolled(window.scrollY > 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl">
-      <div className={`transition-all duration-300 rounded-[2rem] ${
-        isScrolled 
-          ? 'bg-white/95 shadow-lg backdrop-blur-lg border border-brand-200' 
-          : 'bg-white/95 backdrop-blur-lg border border-brand-200/50'
-      } py-4 px-8`}>
+      <div
+        className={`transition-all duration-300 rounded-[2rem] ${
+          isScrolled
+            ? "bg-white/95 shadow-lg backdrop-blur-lg border border-brand-200"
+            : "bg-white/95 backdrop-blur-lg border border-brand-200/50"
+        } py-4 px-8`}
+      >
         <div className="flex justify-between items-center">
           <Logo className="h-12 w-auto" color="text-brand-500" />
           <nav className="hidden md:flex space-x-8">
-            <a href="#features" className="font-semibold text-brand-500 hover:text-brand-600">
+            <a
+              href="#features"
+              className="font-semibold text-brand-500 hover:text-brand-600"
+            >
               Features
             </a>
-            <a href="#pricing" className="font-semibold text-brand-500 hover:text-brand-600">
+            <a
+              href="#pricing"
+              className="font-semibold text-brand-500 hover:text-brand-600"
+            >
               Pricing
             </a>
-            <a href="#about" className="font-semibold text-brand-500 hover:text-brand-600">
+            <a
+              href="#about"
+              className="font-semibold text-brand-500 hover:text-brand-600"
+            >
               About
             </a>
           </nav>

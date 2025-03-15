@@ -1,5 +1,4 @@
-import React from 'react';
-import { WaitlistForm } from './WaitlistForm';
+import { WaitlistForm } from "./WaitlistForm";
 
 export function Hero() {
   return (
@@ -11,13 +10,16 @@ export function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center max-w-3xl mx-auto">
           <h1 className="text-5xl font-bold tracking-tight">
-            <span className="block text-gray-900 mb-2">Transform your speech with</span>
+            <span className="block text-gray-900 mb-2">
+              Transform your speech with
+            </span>
             <span className="block text-brand-500">AI-powered therapy</span>
             <span className="block text-brand-600">anytime, anywhere</span>
           </h1>
           <p className="mt-6 text-xl text-gray-600">
-            Experience professional-grade speech therapy powered by artificial intelligence.
-            Practice at your own pace with real-time feedback and personalized exercises.
+            Experience professional-grade speech therapy powered by artificial
+            intelligence. Practice at your own pace with real-time feedback and
+            personalized exercises.
           </p>
           <div className="mt-10">
             <WaitlistForm />

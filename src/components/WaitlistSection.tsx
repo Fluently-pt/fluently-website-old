@@ -1,6 +1,5 @@
-import React from 'react';
-import { CircleDot } from 'lucide-react';
-import { WaitlistForm } from './WaitlistForm';
+import { CircleDot } from "lucide-react";
+import { WaitlistForm } from "./WaitlistForm";
 
 export function WaitlistSection() {
   return (
@@ -14,14 +13,12 @@ export function WaitlistSection() {
               <span className="text-brand-600 font-semibold">Early Access</span>
             </div>
             <h2 className="text-4xl font-bold text-gray-900">
-              Ready to transform your speech{' '}
-              <span className="text-brand-500">
-                with AI technology
-              </span>
-              ?
+              Ready to transform your speech{" "}
+              <span className="text-brand-500">with AI technology</span>?
             </h2>
             <p className="text-xl text-gray-600">
-              Join our waitlist to be among the first to experience AI-powered speech therapy that adapts to your needs.
+              Join our waitlist to be among the first to experience AI-powered
+              speech therapy that adapts to your needs.
             </p>
           </div>
           <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-8 shadow-xl border border-brand-200">
