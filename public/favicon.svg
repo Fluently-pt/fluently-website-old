@@ -1,0 +1,11 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+	<!-- White background -->
+	<rect width="300" height="300" fill="white" />
+	<!-- Centered graphic group -->
+	<g transform="translate(0, 0)" scale="1">
+		<path d="M261.547 236.659L262.56 196.073L220.488 195.6L261.547 236.659Z" fill="#293587" />
+		<path d="M221.353 113.658H193.257H153.922L122.99 139.603L230.719 143.628L262.561 113.658H221.353Z" fill="#293587" />
+		<path d="M262.359 46.859L30.2763 46.888L99.149 115.761L262.562 113.658L262.359 46.859Z" fill="#98A5FE" />
+		<path d="M262.562 139.88L122.99 139.601L179.735 196.347L262.561 196.073L262.562 139.88Z" fill="#98A5FE" />
+	</g>
+</svg>
