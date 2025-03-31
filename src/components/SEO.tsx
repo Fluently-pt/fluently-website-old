@@ -14,7 +14,7 @@ export function SEO({
   title = "Fluently - AI Speech Therapy",
   description = "Transform your speech with AI-powered therapy. Practice anywhere, anytime with real-time feedback and personalized exercises.",
   url = "https://fluently.pt",
-  image = "/images/screenshot.webp",
+  image = "/images/screenshot.jpg",
   keywords = "speech therapy, AI therapy, speech improvement, stuttering, pronunciation, language learning",
   author = "Fluently",
 }: SEOProps) {
