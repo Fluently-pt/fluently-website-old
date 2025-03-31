@@ -5,20 +5,30 @@ export function Stats() {
   useEffect(() => {
     const startCounting = (element: HTMLElement) => {
       const target = parseInt(element.getAttribute("data-target") || "0");
-      const duration = 1000;
-      const steps = 50;
+      const duration = 2000; // Increased duration for smoother animation
+      const steps = 100;
       const stepValue = target / steps;
       let current = 0;
 
+      // Clear any existing interval for this element
+      const existingInterval = element.getAttribute("data-interval");
+      if (existingInterval) {
+        clearInterval(parseInt(existingInterval));
+      }
+
       const counter = setInterval(() => {
         current += stepValue;
-        if (current > target) {
+        if (current >= target) {
           element.textContent = target.toString();
           clearInterval(counter);
+          element.removeAttribute("data-interval");
         } else {
           element.textContent = Math.floor(current).toString();
         }
       }, duration / steps);
+
+      // Store the interval ID on the element
+      element.setAttribute("data-interval", counter.toString());
     };
 
     const observer = new IntersectionObserver(entries => {
@@ -38,7 +48,10 @@ export function Stats() {
   }, []);
 
   return (
-    <section className="py-24 bg-brand-50" id="stats">
+    <section
+      className="stats-section py-32 bg-gradient-to-b from-white to-brand-50"
+      id="stats"
+    >
       <div className="container mx-auto px-4" data-aos="fade-up">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
@@ -73,16 +86,16 @@ export function Stats() {
               data-aos="fade-up"
               data-aos-delay={100 + index * 100}
             >
-              <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-4 shadow-lg border-2 border-brand-50">
-                <stat.icon className="w-6 h-6 text-brand-300" />
+              <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center mb-4 shadow-soft border border-brand-100">
+                <stat.icon className="w-7 h-7 text-brand-300" />
               </div>
               <div className="mt-0 p-8 pb-4 w-full text-center relative">
-                <span className="text-4xl font-bold text-brand-300 flex items-center justify-center gap-1">
+                <span className="text-5xl font-bold text-brand-500 flex items-center justify-center gap-1 tabular-nums">
                   {stat.prefix}
                   <span data-target={stat.value}>0</span>
                   {stat.suffix}
                 </span>
-                <p className="mt-2 text-brand-800 font-medium font-heading">
+                <p className="mt-4 text-lg text-brand-800 font-medium">
                   {stat.label}
                 </p>
               </div>

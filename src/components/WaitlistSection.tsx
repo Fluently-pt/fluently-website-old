@@ -4,11 +4,11 @@ export function WaitlistSection() {
   const [email, setEmail] = useState("");
 
   return (
-    <section className="py-32" id="waitlist">
+    <section className="py-32 bg-brand-50" id="waitlist">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12">
-          <div className="w-full md:w-1/2 text-left">
-            <h2 className="text-4xl font-semibold text-brand-500">
+          <div className="w-full md:w-1/2 text-left" data-aos="fade-right">
+            <h2 className="text-4xl font-bold text-brand-500 leading-tight">
               Ready to transform your speech with{" "}
               <span className="text-brand-300">AI technology</span>?
             </h2>
@@ -18,16 +18,16 @@ export function WaitlistSection() {
             </p>
           </div>
 
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2" data-aos="fade-left">
             <div className="flex flex-col md:flex-row items-center gap-4">
               <input
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full flex-1 px-5 py-3 rounded-lg border-2 border-brand-200 focus:border-brand-300 outline-none text-brand-800 placeholder:text-brand-800/50"
+                className="w-full flex-1 px-5 py-3.5 rounded-lg border-2 border-brand-200 focus:border-brand-300 outline-none text-brand-800 placeholder:text-brand-800/50 transition-all duration-300"
               />
-              <button className="w-1/2 md:w-auto px-4 py-3 rounded-lg bg-brand-300 text-white font-semibold whitespace-nowrap transition-all duration-300 hover:bg-brand-400">
+              <button className="w-full md:w-auto px-8 py-3.5 rounded-lg bg-brand-300 text-white font-semibold whitespace-nowrap transition-all duration-300 hover:bg-brand-400 hover:shadow-soft">
                 Join Beta
               </button>
             </div>

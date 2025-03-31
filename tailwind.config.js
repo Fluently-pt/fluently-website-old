@@ -33,6 +33,16 @@ export default {
           "0%": { transform: "translate(-90px, 0%)" },
           "100%": { transform: "translate(85px, 0%)" },
         },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 0.5s ease-out forwards",
+      },
+      boxShadow: {
+        soft: "0 4px 20px -2px rgba(41, 53, 135, 0.1)",
       },
     },
   },

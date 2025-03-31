@@ -75,23 +75,23 @@ export default function Header() {
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all py-4`}>
       <div
-        className={`container mx-auto px-4 relative flex items-center justify-between transition-all duration-300 bg-white shadow-lg rounded-2xl px-8 py-4 mx-8 backdrop-blur-sm`}
+        className={`container mx-auto px-4 relative flex items-center justify-between transition-all duration-300 bg-white/95 shadow-soft rounded-2xl px-8 py-4 mx-8 backdrop-blur-sm`}
       >
         <Logo className="h-8 w-auto" color="text-brand-500" />
 
-        <nav className="navmenu mx-auto hidden lg:flex space-x-8">
+        <nav className="navmenu mx-auto hidden lg:flex space-x-12">
           {navItems.map(([title, sectionId]) => (
             <a
               key={title}
               href={`#${sectionId}`}
               onClick={e => scrollToSection(e, sectionId)}
-              className={`relative font-semibold transition-colors duration-300
-                before:content-[''] before:absolute before:bottom-[-6px] before:left-0 
-                before:h-0.5 before:bg-brand-400 before:transition-all before:duration-300
+              className={`relative font-semibold transition-all duration-300
+                before:content-[''] before:absolute before:bottom-[-6px] before:left-1/2 
+                before:h-0.5 before:bg-brand-300 before:transition-all before:duration-300
                 ${
                   isActive(sectionId)
-                    ? "text-brand-600 before:w-6"
-                    : "text-brand-500 hover:text-brand-600 before:w-0 hover:before:w-6"
+                    ? "text-brand-500 before:w-full before:-translate-x-1/2"
+                    : "text-brand-800 hover:text-brand-500 before:w-0 hover:before:w-full hover:before:-translate-x-1/2"
                 }`}
             >
               {title}
@@ -113,7 +113,7 @@ export default function Header() {
 
         <a
           href="#"
-          className="hidden lg:flex items-center space-x-2 text-brand-500 hover:text-brand-600 font-semibold transition-colors duration-300"
+          className="hidden lg:flex items-center space-x-2 text-white bg-brand-300 hover:bg-brand-400 px-4 py-2 rounded-lg font-semibold transition-all duration-300"
         >
           <LogIn className="h-5 w-5" />
           <span>Login</span>

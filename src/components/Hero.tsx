@@ -58,16 +58,23 @@ export function Hero() {
         <div className="row gy-4 justify-between">
           <div
             className="lg:w-1/2 flex flex-col justify-center"
-            data-aos="fade-in"
+            data-aos="fade-up"
+            data-aos-delay="100"
           >
             <div className="early-access-header">
-              <h2 className="text-4xl font-bold text-start text-white">
+              <h2 className="text-5xl font-bold text-start text-white leading-tight">
                 Transform your speech with
                 <br />
-                AI-powered therapy
+                <span className="text-brand-50">AI-powered therapy</span>
                 <br />
                 anytime, anywhere
               </h2>
+              <a
+                href="#waitlist"
+                className="mt-8 inline-flex items-center px-8 py-4 bg-white text-brand-500 font-semibold rounded-lg transition-all duration-300 hover:bg-brand-50 hover:scale-105 shadow-soft"
+              >
+                Join Beta Access
+              </a>
             </div>
           </div>
         </div>

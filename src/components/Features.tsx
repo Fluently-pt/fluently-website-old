@@ -6,8 +6,9 @@ export function Features() {
       <div className="container mx-auto px-4" data-aos="fade-up">
         {/* Main Content */}
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-4xl font-semibold text-brand-500">
+          <h2 className="text-4xl font-bold text-brand-500 leading-tight">
             AI-Powered Speech Therapy
+            <span className="block text-brand-300 mt-2">Made Simple</span>
           </h2>
           <p className="mt-6 text-lg text-brand-800 max-w-2xl">
             Experience professional-grade speech therapy powered by artificial
@@ -55,10 +56,12 @@ export function Features() {
           ].map((feature, index) => (
             <div
               key={index}
-              className="group bg-white p-8 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="group bg-white p-8 rounded-2xl shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-brand-50"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full mb-6 bg-brand-50 text-brand-300 transition-all duration-300 group-hover:bg-brand-300 group-hover:text-white">
-                <feature.icon className="w-6 h-6" />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 bg-brand-50 text-brand-300 transition-all duration-300 group-hover:bg-brand-300 group-hover:text-white">
+                <feature.icon className="w-7 h-7" />
               </div>
               <h3 className="text-2xl font-bold text-brand-500 mb-3">
                 {feature.title}
