@@ -22,13 +22,17 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               {[
-                [Twitter, "https://twitter.com"],
-                [Facebook, "https://facebook.com"],
-                [Instagram, "https://instagram.com"],
-                [Youtube, "https://youtube.com"],
-              ].map(([Icon, url]) => (
+                { Icon: Twitter, url: "https://twitter.com", id: "twitter" },
+                { Icon: Facebook, url: "https://facebook.com", id: "facebook" },
+                {
+                  Icon: Instagram,
+                  url: "https://instagram.com",
+                  id: "instagram",
+                },
+                { Icon: Youtube, url: "https://youtube.com", id: "youtube" },
+              ].map(({ Icon, url, id }) => (
                 <a
-                  key={url}
+                  key={id}
                   href={url}
                   className="w-10 h-10 rounded-full border border-brand-300/50 flex items-center justify-center text-brand-300/70 hover:border-brand-300 hover:text-brand-300 transition-colors duration-300"
                   target="_blank"

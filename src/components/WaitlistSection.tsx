@@ -4,7 +4,7 @@ export function WaitlistSection() {
   const [email, setEmail] = useState("");
 
   return (
-    <section className="py-32">
+    <section className="py-32" id="waitlist">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-12">
           <div className="w-full md:w-1/2 text-left">

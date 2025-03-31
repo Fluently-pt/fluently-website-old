@@ -38,7 +38,7 @@ export function Stats() {
   }, []);
 
   return (
-    <section className="py-24 bg-brand-50">
+    <section className="py-24 bg-brand-50" id="stats">
       <div className="container mx-auto px-4" data-aos="fade-up">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[

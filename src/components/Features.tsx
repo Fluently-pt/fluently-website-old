@@ -2,7 +2,7 @@ import { Brain, Target, Globe2, Clock } from "lucide-react";
 
 export function Features() {
   return (
-    <section className="py-32 mt-10">
+    <section className="py-32 mt-10" id="features">
       <div className="container mx-auto px-4" data-aos="fade-up">
         {/* Main Content */}
         <div className="flex flex-col items-center text-center">
