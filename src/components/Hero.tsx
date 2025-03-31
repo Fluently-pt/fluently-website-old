@@ -25,7 +25,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="hero relative min-h-[70vh] flex items-center py-32 overflow-hidden"
+      className="relative min-h-screen flex items-center py-32 overflow-hidden"
     >
       {/* Background Carousel */}
       <div className="swiper hero-carousel absolute inset-0">
@@ -75,7 +75,7 @@ export function Hero() {
 
       {/* Animated Waves */}
       <svg
-        className="absolute bottom-0 w-full h-[60px] z-[2]"
+        className="absolute bottom-0 w-full h-16 z-10"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 24 150 28"
         preserveAspectRatio="none"
