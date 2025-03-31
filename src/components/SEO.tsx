@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useEffect, useState } from "react";
 
 interface SEOProps {
   title?: string;
@@ -12,21 +13,19 @@ interface SEOProps {
 export function SEO({
   title = "Fluently - AI Speech Therapy",
   description = "Transform your speech with AI-powered therapy. Practice anywhere, anytime with real-time feedback and personalized exercises.",
-  url = typeof window !== "undefined"
-    ? window.location.origin
-    : "https://fluently.pt",
-  image = "/screenshots/desktop.webp",
+  url = "https://fluently.pt",
+  image = "/images/screenshot.webp",
   keywords = "speech therapy, AI therapy, speech improvement, stuttering, pronunciation, language learning",
   author = "Fluently",
 }: SEOProps) {
-  const fullImageUrl =
-    typeof window !== "undefined"
-      ? `${window.location.origin}${image}`
-      : `${url}${image}`;
-  const logoUrl =
-    typeof window !== "undefined"
-      ? `${window.location.origin}/images/logo.svg`
-      : `${url}/images/logo.svg`;
+  const [baseUrl, setBaseUrl] = useState(url);
+
+  useEffect(() => {
+    setBaseUrl(window.location.origin);
+  }, []);
+
+  const fullImageUrl = `${baseUrl}${image}`;
+  const logoUrl = `${baseUrl}/images/logo.svg`;
 
   return (
     <Helmet>
@@ -43,6 +42,9 @@ export function SEO({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullImageUrl} />
+      <meta property="og:image:secure_url" content={fullImageUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:url" content={url} />
 
       {/* Twitter Card tags */}
@@ -69,15 +71,15 @@ export function SEO({
             logo: {
               "@type": "ImageObject",
               url: logoUrl,
-              width: "512",
-              height: "512",
+              width: "300",
+              height: "300",
             },
           },
           image: {
             "@type": "ImageObject",
             url: fullImageUrl,
-            width: "2765",
-            height: "1655",
+            width: "1200",
+            height: "630",
           },
         })}
       </script>
