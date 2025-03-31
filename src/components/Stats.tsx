@@ -1,4 +1,4 @@
-import { Users2, Wallet2, ListChecks, TrendingUp } from "lucide-react";
+import { Users2, Wallet2, ListChecks, LineChart } from "lucide-react";
 import { useEffect } from "react";
 
 export function Stats() {
@@ -61,7 +61,7 @@ export function Stats() {
               label: "Custom Exercises Available",
             },
             {
-              icon: TrendingUp,
+              icon: LineChart,
               value: 92,
               suffix: "%",
               label: "Success rate",

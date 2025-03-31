@@ -1,10 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Logo } from "./Logo";
-import {
-  Bars3Icon,
-  XMarkIcon,
-  ArrowRightOnRectangleIcon,
-} from "@heroicons/react/24/outline";
+import { Menu, X, LogIn } from "lucide-react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -88,9 +84,9 @@ export default function Header() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
-            <XMarkIcon className="h-8 w-8" />
+            <X className="h-8 w-8" />
           ) : (
-            <Bars3Icon className="h-8 w-8" />
+            <Menu className="h-8 w-8" />
           )}
         </button>
 
@@ -98,7 +94,7 @@ export default function Header() {
           href="#"
           className="hidden lg:flex items-center space-x-2 text-brand-500 hover:text-brand-600 font-semibold transition-colors duration-300"
         >
-          <ArrowRightOnRectangleIcon className="h-5 w-5" />
+          <LogIn className="h-5 w-5" />
           <span>Login</span>
         </a>
 

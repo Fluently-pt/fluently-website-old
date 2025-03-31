@@ -1,4 +1,4 @@
-import { Brain, Target, Globe, Clock } from "lucide-react";
+import { Brain, Target, Globe2, Clock } from "lucide-react";
 
 export function Features() {
   return (
@@ -41,7 +41,7 @@ export function Features() {
                 "Professional-grade therapy accessible from anywhere",
             },
             {
-              icon: Globe,
+              icon: Globe2,
               title: "Global Access",
               description:
                 "Professional-grade therapy accessible from anywhere",

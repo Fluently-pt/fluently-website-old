@@ -11,11 +11,10 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "@heroicons/react": "^2.2.0",
     "aos": "^2.3.4",
     "compression": "^1.8.0",
     "express": "^4.21.2",
-    "lucide-react": "^0.482.0",
+    "lucide-react": "^0.486.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "swiper": "^11.2.6"
