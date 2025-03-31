@@ -44,6 +44,12 @@ export default {
       boxShadow: {
         soft: "0 4px 20px -2px rgba(41, 53, 135, 0.1)",
       },
+      height: {
+        screen: "100dvh",
+      },
+      minHeight: {
+        screen: "100dvh",
+      },
     },
   },
   plugins: [],

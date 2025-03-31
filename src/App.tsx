@@ -23,7 +23,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <SEO />
-      <div className="min-h-screen bg-white max-w-[1920px] mx-auto overflow-hidden">
+      <div className="min-h-screen bg-white mx-auto overflow-hidden">
         <Header />
         <main>
           <Hero />
