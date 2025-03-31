@@ -7,7 +7,6 @@ import {
 } from "@heroicons/react/24/outline";
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("join");
   const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -15,8 +14,6 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-
       // Update active section based on scroll position
       const sections = ["join", "about", "features", "pricing"];
       for (const section of sections) {
@@ -60,17 +57,9 @@ export default function Header() {
   const isActive = (href: string) => activeSection === href.replace("#", "");
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all ${
-        isScrolled ? "py-4" : "py-5"
-      }`}
-    >
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all py-4`}>
       <div
-        className={`container mx-auto px-4 relative flex items-center justify-between transition-all duration-300 ${
-          isScrolled
-            ? "bg-white shadow-lg rounded-2xl px-8 py-4 mx-8 backdrop-blur-sm"
-            : "px-8 mx-8"
-        }`}
+        className={`container mx-auto px-4 relative flex items-center justify-between transition-all duration-300 bg-white shadow-lg rounded-2xl px-8 py-4 mx-8 backdrop-blur-sm`}
       >
         <Logo className="h-8 w-auto" color="text-brand-500" />
 

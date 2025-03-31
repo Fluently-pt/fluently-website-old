@@ -1,10 +1,13 @@
 import { useEffect } from "react";
-import { WaitlistForm } from "./WaitlistForm";
 import Swiper from "swiper";
+import { Autoplay, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-fade";
 
 export function Hero() {
   useEffect(() => {
     const swiper = new Swiper(".hero-carousel", {
+      modules: [Autoplay, EffectFade],
       loop: true,
       autoplay: {
         delay: 2000,
@@ -20,52 +23,59 @@ export function Hero() {
   }, []);
 
   return (
-    <div className="relative pt-44 pb-32 overflow-hidden">
-      {/* Carousel */}
+    <section
+      id="hero"
+      className="hero relative min-h-[70vh] flex items-center py-32 overflow-hidden"
+    >
+      {/* Background Carousel */}
       <div className="swiper hero-carousel absolute inset-0">
         <div className="swiper-wrapper">
-          <div className="swiper-slide">
-            <picture>
-              <source
-                media="(max-width: 768px)"
-                srcSet="/img/hero-bg-2-mobile.webp"
-              />
-              <source media="(min-width: 769px)" srcSet="/img/hero-bg-2.webp" />
-              <img src="/img/hero-bg-2.webp" alt="" className="hero-bg" />
-            </picture>
-          </div>
-          {/* Add other slides similarly */}
+          {[
+            ["/images/hero-bg-2.webp", "/images/hero-bg-2-mobile.webp"],
+            ["/images/hero-bg-2.1.webp", "/images/hero-bg-2.1-mobile.webp"],
+            ["/images/hero-bg-2.2.webp", "/images/hero-bg-2.2-mobile.webp"],
+          ].map(([desktop, mobile], index) => (
+            <div key={index} className="swiper-slide">
+              <picture>
+                <source media="(max-width: 768px)" srcSet={mobile} />
+                <source media="(min-width: 769px)" srcSet={desktop} />
+                <img
+                  src={desktop}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </picture>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Existing content */}
-      <div className="absolute inset-0">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-brand-200 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-brand-300/30 blur-3xl"></div>
-      </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-5xl font-bold tracking-tight">
-            <span className="block text-gray-900 mb-2">
-              Transform your speech with
-            </span>
-            <span className="block text-brand-500">AI-powered therapy</span>
-            <span className="block text-brand-600">anytime, anywhere</span>
-          </h1>
-          <p className="mt-6 text-xl text-gray-600">
-            Experience professional-grade speech therapy powered by artificial
-            intelligence. Practice at your own pace with real-time feedback and
-            personalized exercises.
-          </p>
-          <div className="mt-10">
-            <WaitlistForm />
+      {/* Color Overlay */}
+      <div className="absolute inset-0 bg-brand-200/20 before:content-[''] before:absolute before:inset-0 before:bg-brand-300/45 before:z-[1] z-[1]" />
+
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="row gy-4 justify-between">
+          <div
+            className="lg:w-1/2 flex flex-col justify-center"
+            data-aos="fade-in"
+          >
+            <div className="early-access-header">
+              <h2 className="text-4xl font-bold text-start text-white">
+                Transform your speech with
+                <br />
+                AI-powered therapy
+                <br />
+                anytime, anywhere
+              </h2>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Wave SVG */}
+      {/* Animated Waves */}
       <svg
-        className="absolute bottom-0 w-full"
+        className="absolute bottom-0 w-full h-[60px] z-[2]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 24 150 28"
         preserveAspectRatio="none"
@@ -74,18 +84,18 @@ export function Hero() {
           <path
             id="wave-path"
             d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-          ></path>
+          />
         </defs>
-        <g className="wave1">
-          <use xlinkHref="#wave-path" x="50" y="3"></use>
+        <g className="animate-[wave1_10s_linear_infinite] fill-white opacity-60">
+          <use xlinkHref="#wave-path" x="50" y="3" />
         </g>
-        <g className="wave2">
-          <use xlinkHref="#wave-path" x="50" y="0"></use>
+        <g className="animate-[wave2_8s_linear_infinite] fill-white opacity-40">
+          <use xlinkHref="#wave-path" x="50" y="0" />
         </g>
-        <g className="wave3">
-          <use xlinkHref="#wave-path" x="50" y="9"></use>
+        <g className="animate-[wave3_6s_linear_infinite] fill-white">
+          <use xlinkHref="#wave-path" x="50" y="9" />
         </g>
       </svg>
-    </div>
+    </section>
   );
 }
