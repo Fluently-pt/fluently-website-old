@@ -12,11 +12,22 @@ interface SEOProps {
 export function SEO({
   title = "Fluently - AI Speech Therapy",
   description = "Transform your speech with AI-powered therapy. Practice anywhere, anytime with real-time feedback and personalized exercises.",
-  image = "/images/screenshots/desktop.webp",
-  url = "https://fluently.pt",
+  url = typeof window !== "undefined"
+    ? window.location.origin
+    : "https://fluently.pt",
+  image = "/screenshots/desktop.webp",
   keywords = "speech therapy, AI therapy, speech improvement, stuttering, pronunciation, language learning",
   author = "Fluently",
 }: SEOProps) {
+  const fullImageUrl =
+    typeof window !== "undefined"
+      ? `${window.location.origin}${image}`
+      : `${url}${image}`;
+  const logoUrl =
+    typeof window !== "undefined"
+      ? `${window.location.origin}/images/logo.svg`
+      : `${url}/images/logo.svg`;
+
   return (
     <Helmet>
       <title>{title}</title>
@@ -31,14 +42,14 @@ export function SEO({
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={fullImageUrl} />
       <meta property="og:url" content={url} />
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={fullImageUrl} />
 
       {/* Structured Data */}
       <script type="application/ld+json">
@@ -57,14 +68,14 @@ export function SEO({
             name: "Fluently",
             logo: {
               "@type": "ImageObject",
-              url: `${url}/images/logo.svg`,
+              url: logoUrl,
               width: "512",
               height: "512",
             },
           },
           image: {
             "@type": "ImageObject",
-            url: image,
+            url: fullImageUrl,
             width: "2765",
             height: "1655",
           },
