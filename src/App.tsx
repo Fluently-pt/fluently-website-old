@@ -19,7 +19,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white max-w-[1920px] mx-auto overflow-hidden">
       <Header />
       <main>
         <Hero />
