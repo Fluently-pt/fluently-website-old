@@ -5,19 +5,27 @@ interface SEOProps {
   description?: string;
   image?: string;
   url?: string;
+  keywords?: string;
+  author?: string;
 }
 
 export function SEO({
   title = "Fluently - AI Speech Therapy",
   description = "Transform your speech with AI-powered therapy. Practice anywhere, anytime with real-time feedback and personalized exercises.",
-  image = "/images/og-image.jpg",
+  image = "/images/screenshots/desktop.webp",
   url = "https://fluently.pt",
+  keywords = "speech therapy, AI therapy, speech improvement, stuttering, pronunciation, language learning",
+  author = "Fluently",
 }: SEOProps) {
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="robots" content="index, follow" />
+      <meta name="author" content={author} />
+      <meta name="keywords" content={keywords} />
+      <link rel="canonical" href={url} />
+      <meta name="format-detection" content="telephone=no" />
 
       {/* OpenGraph tags */}
       <meta property="og:type" content="website" />
@@ -49,11 +57,27 @@ export function SEO({
             name: "Fluently",
             logo: {
               "@type": "ImageObject",
-              url: `${url}/images/logo_text.svg`,
+              url: `${url}/images/logo.svg`,
+              width: "512",
+              height: "512",
             },
+          },
+          image: {
+            "@type": "ImageObject",
+            url: image,
+            width: "2765",
+            height: "1655",
           },
         })}
       </script>
+
+      {/* Google Analytics placeholder */}
+      {/* {process.env.NEXT_PUBLIC_GA_ID && (
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+        />
+      )} */}
     </Helmet>
   );
 }
