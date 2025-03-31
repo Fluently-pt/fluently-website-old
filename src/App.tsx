@@ -11,8 +11,8 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <Stats />
         <Features />
+        <Stats />
         <WaitlistSection />
       </main>
       <Footer />
