@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "aos": "^2.3.4",
     "compression": "^1.8.0",
     "express": "^4.21.2",
     "lucide-react": "^0.482.0",

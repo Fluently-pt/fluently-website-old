@@ -8,14 +8,14 @@ export default {
       },
       colors: {
         brand: {
-          50: "#F8F9FF", // Brighter white background
-          100: "#FFFFFF", // Pure white
-          200: "#E2E7FF", // Enhanced light blue
-          300: "#6B7DFF", // Vibrant light purple
-          400: "#4E64FF", // Vibrant medium purple
-          500: "#3B4FE3", // Vibrant primary blue
-          600: "#2C3CBF", // Rich purple-blue
-          700: "#232F99", // Deep purple-blue
+          50: "#EEF0FB", // Lightest blue tint
+          100: "#DDE0F7", // Very light blue
+          200: "#BBC1F3", // Light blue
+          300: "#98A5FE", // Logo light blue
+          400: "#5B6AB3", // Medium blue
+          500: "#293587", // Logo dark blue
+          600: "#212B6C", // Darker blue
+          700: "#1A2256", // Very dark blue
           800: "#4B4E4E", // Gray text color
           900: "#3A3C3C", // Darker gray
         },
