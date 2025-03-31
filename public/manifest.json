@@ -13,16 +13,14 @@
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "/android-icon-36x36.png",
+      "src": "/icons/icon-36x36.png",
       "sizes": "36x36",
-      "type": "image/png",
-      "density": "0.75"
+      "type": "image/png"
     },
     {
-      "src": "/android-icon-48x48.png",
+      "src": "/icons/icon-48x48.png",
       "sizes": "48x48",
-      "type": "image/png",
-      "density": "1.0"
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-72x72.png",
@@ -75,14 +73,5 @@
     "client_mode": ["focus-existing", "auto"]
   },
   "related_applications": [],
-  "iarc_rating_id": "",
-  "share_target": {
-    "action": "/share",
-    "method": "GET",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
-    }
-  }
+  "iarc_rating_id": ""
 }
